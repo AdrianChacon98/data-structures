@@ -8,7 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import com.estructuras.datastrutures.infija_a_prefija.Prefija;
@@ -201,10 +203,45 @@ public class DataStruturesApplication implements CommandLineRunner{
 		*/
 
 
+		/*
+		int number = 11;
+
+
+		if(number%2==1){
+			System.out.println("it a prime number");
+		}else{
+			System.out.println("it not a prime number");
+		}
+		*/
+
+
+
+
+
 
 
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public static int[] join(int[] a, int[] b)
 	{
 		return IntStream.concat(Arrays.stream(a), Arrays.stream(b))

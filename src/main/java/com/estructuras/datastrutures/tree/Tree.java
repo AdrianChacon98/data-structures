@@ -31,10 +31,11 @@ public class Tree {
         else if(key>root.key)
             root.right=insertRec(root.right,key);
 
+
         return root;
    }
 
-   public void deleteKey(int key){
+   /*public void deleteKey(int key){
         this.root=deleteRec(root, key);
    }
    private Node deleteRec(Node root,int key){
@@ -83,14 +84,14 @@ public class Tree {
 
     public void inOrder(){
         inOrderRec(this.root);
-    }
+    }*/
 
     private void inOrderRec(Node root){
 
         if(root!=null){
             inOrderRec(root.left);
             logger.info("Value:"+root.key);
-            inOrderRec(root.left);
+            inOrderRec(root.right);
         }
     }
 

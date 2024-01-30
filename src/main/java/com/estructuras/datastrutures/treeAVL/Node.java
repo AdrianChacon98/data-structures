@@ -1,5 +1,7 @@
 package com.estructuras.datastrutures.treeAVL;
 
+//https://www.happycoders.eu/algorithms/avl-tree-java/
+
 /*AVL TREE Description*/
 /*
 * AVL TREE
@@ -44,20 +46,47 @@ package com.estructuras.datastrutures.treeAVL;
 *
 *
 *
+*AVL Tree Balancing
+*After insertion into or deletion from the AVL tree, we calculate the height and balance factor from the inserted or deleted node upwards to the root.
+*
+*If, at a node, we determine that the AVL invariant is no longer satisfied (i.e., the balance factor is less than -1 or greater than +1), we must rebalance. We differentiate four cases:
+*
+*Balancing a left-heavy node:
+*   Right rotation
+*   Left-right Rotation
+*Balancing a right-heavy node:
+*   Left rotation
+*   Right-left rotation
+*
+* Rebalancing by Right Rotation
+*
+* Rebalancing by Left-Right Rotation
+*
+* Rebalancing by Left Rotation
+*
+* Rebalancing by Right-Left Rotation
+*
+*
+* 1.	BF(N) < -1 and BF(L) ≤ 0	Right rotation around N
+* 2.	BF(N) < -1 and BF(L) > 0	Left rotation around L followed by right rotation around N
+* 3.	BF(N) > 1 and BF(R) ≥ 0	Left rotation around N
+* 4.	BF(N) > 1 and BF(R) < 0	Right rotation around R followed by left rotation around N
+*
+*
+*
+*
 *
 *
 * */
 public class Node {
 
 
-    int data;
-    Node left;
-    Node right;
+   public int key;
+   public Node left,right;
+   public int height;
 
-    int height;
-
-    public Node(int data){
-
+    public Node(int key){
+        this.key=key;
     }
 
 

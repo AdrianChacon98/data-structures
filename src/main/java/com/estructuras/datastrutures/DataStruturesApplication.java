@@ -2,6 +2,7 @@ package com.estructuras.datastrutures;
 
 import com.estructuras.datastrutures.TraversalTree.Node;
 import com.estructuras.datastrutures.TraversalTree.TraversalTree;
+import com.estructuras.datastrutures.leetcode.LeetCode;
 import com.estructuras.datastrutures.tree.Tree;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -373,7 +374,21 @@ public class DataStruturesApplication implements CommandLineRunner{
 		tree.root.right.left = new Node(5);
 		tree.root.right.right= new Node(6);
 
+		System.out.print(tree.root.key+" ");
+		System.out.print(tree.root.left.key+" ");
+		System.out.print(tree.root.left.left.key);
 
+		System.out.println("");
+
+		System.out.print(tree.root.key+" ");
+		System.out.print(tree.root.right.key+" ");
+		System.out.print(tree.root.right.left.key+" ");
+
+		System.out.println("");
+
+		System.out.print(tree.root.key+" ");
+		System.out.print(tree.root.right.key+" ");
+		System.out.print(tree.root.right.right.key+" ");
 
 
 
@@ -529,24 +544,14 @@ public class DataStruturesApplication implements CommandLineRunner{
 		phrase = Arrays.asList(phrase.split(" ")).stream().map(word -> new StringBuilder(word).reverse()).collect(Collectors.joining(" "));
 
 
-		System.out.println(phrase);
+		//System.out.println(phrase);
+
+		LeetCode leetCode = new LeetCode();
+
+		leetCode.generatePermutations("1234","4213");
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		
 
 
 
@@ -646,14 +651,7 @@ public class DataStruturesApplication implements CommandLineRunner{
 
 
 
-	public void printMap(String [][] mapping,int rowSize,int [] height){
-		for(int row=0;row<rowSize;row++){
-			for(int column=0; column<height.length;column++){
-				System.out.print(mapping[row][column]);
-			}
-			System.out.println("");
-		}
-	}
+
 
 
 

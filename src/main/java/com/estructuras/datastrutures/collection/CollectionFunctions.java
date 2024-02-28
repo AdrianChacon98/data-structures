@@ -8,6 +8,7 @@ import java.util.Set;
 public class CollectionFunctions {
 
 
+
     /*
     * E->Element
     * K->Key

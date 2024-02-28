@@ -22,9 +22,9 @@ package com.estructuras.datastrutures.stack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StackList {
-
-    private List<String> stack = new ArrayList<>();
+public class StackList<T> {
+    /*
+    private List<T> stack = new ArrayList<>();
 
 
 
@@ -38,24 +38,24 @@ public class StackList {
 
     }
 
-    public String pop()
+    public T pop()
     {
 
         return this.stack.remove(this.stack.size());
     }
 
-    public String peek(){
+    public T peek(){
         return this.stack.get(this.stack.size());
     }
 
-    public int search(String element){
-        return this.stack.indexOf(element);
+    public T search(T element){
+        return  this.stack.indexOf(element);
     }
 
     public boolean isEmpty(){
         return this.stack.isEmpty();
     }
-
+    */
 
 
 

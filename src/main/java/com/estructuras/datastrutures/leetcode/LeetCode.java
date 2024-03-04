@@ -3,8 +3,10 @@ package com.estructuras.datastrutures.leetcode;
 import com.estructuras.datastrutures.data_structured.SortedAlgorithms;
 import com.estructuras.datastrutures.recursive.RecursiveAlgorithms;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LeetCode {
 
@@ -195,6 +197,111 @@ public class LeetCode {
         System.out.println("The binary sum is="+sum);
 
     }
+
+    /*
+    public ArrayList<ArrayList<String>> groupAnagrams() {
+
+        String[] arrayWords = {"eat", "tea", "tan", "ate", "nat", "bat"};
+
+        String[] sortedArrayWords = new String[arrayWords.length];
+
+        ArrayList<ArrayList<String>> groupAnagrams = new ArrayList<>();
+
+        for (int i = 0; i < arrayWords.length; i++) {
+            sortedArrayWords[i] = bubbleSort(arrayWords[i]);
+        }
+
+        for (int i = 0; i < arrayWords.length; i++) {
+
+            ArrayList<String> group = new ArrayList<>();
+
+            for (int j = 0; j < arrayWords.length; j++) {
+
+                if (sortedArrayWords[i] == sortedArrayWords[j]) {
+                    group.add(arrayWords[j]);
+                }
+
+            }
+
+            //delete all
+            //Arrays.asList(arrayWords).stream().filter();
+
+        }
+
+        return null;
+    }*/
+
+    public List<List<String>> groupAnagrams(){
+        ArrayList<String> str = new ArrayList<>();
+
+        str.add("eat");
+        str.add("tea");
+        str.add("tan");
+        str.add("ate");
+        str.add("nat");
+        str.add("bat");
+
+
+        ArrayList<String> anagrams = new ArrayList<>();
+        ArrayList<List<String>> groupAnagrams = new ArrayList<>();
+        for(int i=0;i<str.size();){
+            String aux1 = bubbleSort(str.get(i));
+            anagrams.add(str.get(i));
+            for(int j=i+1;j<str.size();j++)
+            {
+                String aux2 = bubbleSort(str.get(j));
+
+                if(aux1.equalsIgnoreCase(aux2))
+                    anagrams.add(str.get(j));
+
+
+            }
+            groupAnagrams.add(anagrams);
+
+            for(String aux : anagrams){
+                str= (ArrayList<String>) str.stream().filter(item->item!=aux).collect(Collectors.toList());
+            }
+
+
+
+            anagrams = new ArrayList<>();
+
+
+
+
+
+        }
+
+        for(List<String> aux : groupAnagrams ){
+            System.out.println(aux);
+        }
+
+        return groupAnagrams;
+    }
+
+
+    public String bubbleSort(String word)
+    {
+        char[] wordArray = word.toCharArray();
+
+        for(int i=0; i<wordArray.length; i++){
+            for(int j=0; j<wordArray.length-1;j++){
+                if(wordArray[j]>wordArray[j+1]){
+                    char aux=' ';
+                    aux=wordArray[j];
+                    wordArray[j]=wordArray[j+1];
+                    wordArray[j+1]=aux;
+                }
+
+            }
+        }
+
+
+        return String.valueOf(wordArray);
+    }
+
+
+
 
     /*
     * Is Unique: Implement an algorithm to determine if a string has all unique characters. What if you
